@@ -10,6 +10,14 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import { ArrowUpRight } from 'lucide-react';
+import { motion } from 'motion/react';
+
+const fadeUp = {
+  hidden: { opacity: 0, filter: 'blur(8px)', y: 12 },
+  visible: { opacity: 1, filter: 'blur(0px)', y: 0 },
+};
+
+const viewport = { once: true, margin: '-80px' };
 
 type WebProject = {
   name: string;
@@ -118,13 +126,27 @@ export default function Projects() {
   return (
     <section className="border-t border-white/10">
       <div className="mx-auto max-w-5xl px-6 py-24">
-        <div className="mb-16 flex items-center gap-5">
+        <motion.div
+          className="mb-16 flex items-center gap-5"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          transition={{ duration: 0.7, ease: [0.25, 0, 0, 1] }}
+        >
           <span className="font-mono text-[11px] text-zinc-700">01</span>
           <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-zinc-500">
             Projects
           </span>
-        </div>
+        </motion.div>
 
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          transition={{ duration: 0.7, ease: [0.25, 0, 0, 1], delay: 0.1 }}
+        >
         <Tabs defaultValue="web">
           <TabsList className="mb-10 h-auto w-full justify-start gap-0 rounded-none border-b border-white/10 bg-transparent p-0">
             <TabsTrigger
@@ -160,6 +182,7 @@ export default function Projects() {
             </div>
           </TabsContent>
         </Tabs>
+        </motion.div>
       </div>
 
       <Dialog

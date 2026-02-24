@@ -1,19 +1,55 @@
-import { Badge } from "@/components/ui/badge"
+'use client';
 
-const skills = ["Next.js", "Payload CMS", "TypeScript", "Figma"]
+import { motion } from 'motion/react';
+import { Badge } from '@/components/ui/badge';
+
+const skills = [
+  'Next.js',
+  'Payload CMS',
+  'TypeScript',
+  'Figma',
+  'Adobe Photoshop',
+  'React.js',
+  'Cloudflare',
+  'Vercel',
+  'French',
+  'German',
+  'Spanish',
+];
+
+const fadeUp = {
+  hidden: { opacity: 0, filter: 'blur(8px)', y: 12 },
+  visible: { opacity: 1, filter: 'blur(0px)', y: 0 },
+};
+
+const viewport = { once: true, margin: '-80px' };
 
 export default function Skills() {
   return (
     <section className="border-t border-white/10">
       <div className="mx-auto max-w-5xl px-6 py-24">
-        <div className="mb-16 flex items-center gap-5">
+        <motion.div
+          className="mb-16 flex items-center gap-5"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          transition={{ duration: 0.7, ease: [0.25, 0, 0, 1] }}
+        >
           <span className="font-mono text-[11px] text-zinc-700">04</span>
           <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-zinc-500">
             Skills
           </span>
-        </div>
+        </motion.div>
 
-        <div className="flex flex-wrap gap-3">
+        <motion.div
+          className="flex flex-wrap gap-3"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          transition={{ duration: 0.7, ease: [0.25, 0, 0, 1], delay: 0.1 }}
+        >
           {skills.map((skill) => (
             <Badge
               key={skill}
@@ -23,8 +59,8 @@ export default function Skills() {
               {skill}
             </Badge>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
-  )
+  );
 }
