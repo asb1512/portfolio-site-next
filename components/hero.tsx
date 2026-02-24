@@ -1,12 +1,12 @@
-"use client"
+'use client';
 
-import { motion } from "motion/react"
-import { Separator } from "@/components/ui/separator"
+import { motion } from 'motion/react';
+import { Separator } from '@/components/ui/separator';
 
 const fadeUp = {
-  hidden: { opacity: 0, filter: "blur(12px)", y: 16 },
-  visible: { opacity: 1, filter: "blur(0px)", y: 0 },
-}
+  hidden: { opacity: 0, filter: 'blur(12px)', y: 16 },
+  visible: { opacity: 1, filter: 'blur(0px)', y: 0 },
+};
 
 export default function Hero() {
   return (
@@ -53,5 +53,5 @@ export default function Hero() {
         </div>
       </motion.div>
     </section>
-  )
+  );
 }

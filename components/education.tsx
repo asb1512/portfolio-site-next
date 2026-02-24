@@ -1,29 +1,26 @@
-"use client"
+'use client';
 
-import { motion } from "motion/react"
+import { motion } from 'motion/react';
 
 const education = [
   {
-    period: "2014–2018",
-    school: "University of Florida",
-    degrees: [
-      "BA, Linguistics",
-      "BA, French & Francophone Studies",
-    ],
+    period: '2014–2018',
+    school: 'University of Florida',
+    degrees: ['BA, Linguistics', 'BA, French & Francophone Studies'],
   },
   {
-    period: "Feb 2020–Aug 2021",
-    school: "Flatiron School",
-    degrees: ["Full-Stack Web Development"],
+    period: 'Feb 2020–Aug 2021',
+    school: 'Flatiron School',
+    degrees: ['Full-Stack Web Development'],
   },
-]
+];
 
 const fadeUp = {
-  hidden: { opacity: 0, filter: "blur(8px)", y: 12 },
-  visible: { opacity: 1, filter: "blur(0px)", y: 0 },
-}
+  hidden: { opacity: 0, filter: 'blur(8px)', y: 12 },
+  visible: { opacity: 1, filter: 'blur(0px)', y: 0 },
+};
 
-const viewport = { once: true, margin: "-80px" }
+const viewport = { once: true, margin: '-80px' };
 
 export default function Education() {
   return (
@@ -52,7 +49,11 @@ export default function Education() {
               initial="hidden"
               whileInView="visible"
               viewport={viewport}
-              transition={{ duration: 0.7, ease: [0.25, 0, 0, 1], delay: i * 0.1 }}
+              transition={{
+                duration: 0.7,
+                ease: [0.25, 0, 0, 1],
+                delay: i * 0.1,
+              }}
             >
               <p className="pt-[2px] font-mono text-[11px] leading-6 text-zinc-500">
                 {edu.period}
@@ -72,5 +73,5 @@ export default function Education() {
         </div>
       </div>
     </section>
-  )
+  );
 }

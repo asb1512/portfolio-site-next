@@ -1,72 +1,73 @@
-"use client"
+'use client';
 
-import Image from "next/image"
-import { motion } from "motion/react"
+import Image from 'next/image';
+import { motion } from 'motion/react';
 
 const experiences = [
   {
-    title: "Creative Director & Lead Developer",
-    date: "Jan 2023–Present",
+    title: 'Creative Director & Lead Developer',
+    date: 'Jan 2023–Present',
     location: null,
-    company: "National Public Affairs",
-    companyUrl: "https://www.natpublicaffairs.com/",
-    logo: "/images/npa-logo.svg",
-    logoClass: "h-3 grayscale",
+    company: 'National Public Affairs',
+    companyUrl: 'https://www.natpublicaffairs.com/',
+    logo: '/images/npa-logo.svg',
+    logoClass: 'h-3 grayscale',
     description:
-      "Managed a team charged with the creation of client assets, including websites, branding, social media content and ads. Helped modernize client site design practices through the use of modern open-source frameworks, such as Next.js and Payload CMS.",
+      'Managed a team charged with the creation of client assets, including websites, branding, social media content and ads. Helped modernize client site design practices through the use of modern open-source frameworks, such as Next.js and Payload CMS.',
     bullets: [
-      "Web design using Figma and Adobe Creative products",
-      "Web development primarily using Next.js and Payload CMS",
+      'Web design using Figma and Adobe Creative products',
+      'Web development primarily using Next.js and Payload CMS',
     ],
   },
   {
-    title: "Full-Stack Developer",
-    date: "Sep 2021–Dec 2022",
+    title: 'Full-Stack Developer',
+    date: 'Sep 2021–Dec 2022',
     location: null,
-    company: "Starboard Co",
-    companyUrl: "https://starboard.co/",
-    logo: "/images/starboard_logo.png",
-    description: "In charge of creating internal tools and websites.",
+    company: 'Starboard Co',
+    companyUrl: 'https://starboard.co/',
+    logo: '/images/starboard_logo.png',
+    description: 'In charge of creating internal tools and websites.',
     bullets: [
-      "Created a web app allowing employees to generate custom client pitches using React.js, Redux/RTK Toolkit, Prisma.js, and PostgreSQL",
-      "Web development primarily using Next.js and Payload CMS",
+      'Created a web app allowing employees to generate custom client pitches using React.js, Redux/RTK Toolkit, Prisma.js, and PostgreSQL',
+      'Web development primarily using Next.js and Payload CMS',
     ],
   },
   {
-    title: "Digital Strategist / Designer",
-    date: "Oct 2019–Sep 2021",
+    title: 'Digital Strategist / Designer',
+    date: 'Oct 2019–Sep 2021',
     location: null,
-    company: "Starboard Co",
-    companyUrl: "https://starboard.co/",
-    logo: "/images/starboard_logo.png",
+    company: 'Starboard Co',
+    companyUrl: 'https://starboard.co/',
+    logo: '/images/starboard_logo.png',
     description:
-      "Charged with the creation of brand assets, logos, and ad campaigns.",
+      'Charged with the creation of brand assets, logos, and ad campaigns.',
     bullets: [
-      "Used Adobe Photoshop to create MMS graphics for marketing campaigns reaching millions of users",
+      'Used Adobe Photoshop to create MMS graphics for marketing campaigns reaching millions of users',
     ],
   },
   {
-    title: "English Language Instructor",
-    date: "Oct 2018–Jun 2019",
-    location: "Saint-Étienne, France",
-    company: "TAPIF",
-    companyUrl: "https://villa-albertine.org/frenchculture/frenchcultures/teach-english-in-france/",
-    logo: "/images/tapif_logo.png",
+    title: 'English Language Instructor',
+    date: 'Oct 2018–Jun 2019',
+    location: 'Saint-Étienne, France',
+    company: 'TAPIF',
+    companyUrl:
+      'https://villa-albertine.org/frenchculture/frenchcultures/teach-english-in-france/',
+    logo: '/images/tapif_logo.png',
     description:
-      "English language instructor within the French educational system.",
+      'English language instructor within the French educational system.',
     bullets: [
-      "Applied phonetic knowledge for dialect correction",
-      "Real-time translation",
+      'Applied phonetic knowledge for dialect correction',
+      'Real-time translation',
     ],
   },
-]
+];
 
 const fadeUp = {
-  hidden: { opacity: 0, filter: "blur(8px)", y: 12 },
-  visible: { opacity: 1, filter: "blur(0px)", y: 0 },
-}
+  hidden: { opacity: 0, filter: 'blur(8px)', y: 12 },
+  visible: { opacity: 1, filter: 'blur(0px)', y: 0 },
+};
 
-const viewport = { once: true, margin: "-80px" }
+const viewport = { once: true, margin: '-80px' };
 
 export default function Experience() {
   return (
@@ -95,7 +96,11 @@ export default function Experience() {
               initial="hidden"
               whileInView="visible"
               viewport={viewport}
-              transition={{ duration: 0.7, ease: [0.25, 0, 0, 1], delay: i * 0.08 }}
+              transition={{
+                duration: 0.7,
+                ease: [0.25, 0, 0, 1],
+                delay: i * 0.08,
+              }}
             >
               <div className="flex flex-col gap-3 pt-[2px]">
                 <p className="font-mono text-[11px] leading-6 text-zinc-500">
@@ -118,7 +123,7 @@ export default function Experience() {
                     alt={exp.company}
                     width={64}
                     height={24}
-                    className={`${exp.logoClass ?? "h-5 brightness-0 invert"} w-auto object-contain`}
+                    className={`${exp.logoClass ?? 'h-5 brightness-0 invert'} w-auto object-contain`}
                   />
                 </a>
               </div>
@@ -147,5 +152,5 @@ export default function Experience() {
         </div>
       </div>
     </section>
-  )
+  );
 }

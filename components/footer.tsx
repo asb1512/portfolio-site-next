@@ -1,14 +1,14 @@
-"use client"
+'use client';
 
-import { motion } from "motion/react"
-import { Github, Linkedin } from "lucide-react"
+import { motion } from 'motion/react';
+import { Github, Linkedin } from 'lucide-react';
 
 const fadeUp = {
-  hidden: { opacity: 0, filter: "blur(8px)", y: 12 },
-  visible: { opacity: 1, filter: "blur(0px)", y: 0 },
-}
+  hidden: { opacity: 0, filter: 'blur(8px)', y: 12 },
+  visible: { opacity: 1, filter: 'blur(0px)', y: 0 },
+};
 
-const viewport = { once: true, margin: "-80px" }
+const viewport = { once: true, margin: '-80px' };
 
 export default function Footer() {
   return (
@@ -74,5 +74,5 @@ export default function Footer() {
         </motion.div>
       </div>
     </footer>
-  )
+  );
 }
