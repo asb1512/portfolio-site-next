@@ -6,7 +6,10 @@
       "Bash(npm install:*)",
       "Bash(pnpm add:*)",
       "Bash(pnpm dlx:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(npx tsc:*)",
+      "WebFetch(domain:www.linkedin.com)",
+      "Bash(git push:*)"
     ]
   }
 }
