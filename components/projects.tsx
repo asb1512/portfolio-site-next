@@ -147,41 +147,41 @@ export default function Projects() {
           viewport={viewport}
           transition={{ duration: 0.7, ease: [0.25, 0, 0, 1], delay: 0.1 }}
         >
-        <Tabs defaultValue="web">
-          <TabsList className="mb-10 h-auto w-full justify-start gap-0 rounded-none border-b border-white/10 bg-transparent p-0">
-            <TabsTrigger
-              value="web"
-              className="rounded-none border-b-[1.5px] border-transparent bg-transparent px-5 py-3 font-mono text-[11px] uppercase tracking-[0.22em] text-zinc-600 shadow-none transition-colors hover:text-zinc-300 data-[state=active]:border-white data-[state=active]:text-white data-[state=active]:shadow-none"
-            >
-              Web
-            </TabsTrigger>
-            <TabsTrigger
-              value="branding"
-              className="rounded-none border-b-[1.5px] border-transparent bg-transparent px-5 py-3 font-mono text-[11px] uppercase tracking-[0.22em] text-zinc-600 shadow-none transition-colors hover:text-zinc-300 data-[state=active]:border-white data-[state=active]:text-white data-[state=active]:shadow-none"
-            >
-              Branding
-            </TabsTrigger>
-          </TabsList>
+          <Tabs defaultValue="web">
+            <TabsList className="mb-10 h-auto w-full justify-start gap-0 rounded-none border-b border-white/10 bg-transparent p-0">
+              <TabsTrigger
+                value="web"
+                className="rounded-none border-b-[1.5px] border-transparent bg-transparent px-5 py-3 font-mono text-[11px] uppercase tracking-[0.22em] text-zinc-600 shadow-none transition-colors hover:text-zinc-300 data-[state=active]:border-white data-[state=active]:text-white data-[state=active]:shadow-none"
+              >
+                Web
+              </TabsTrigger>
+              <TabsTrigger
+                value="branding"
+                className="rounded-none border-b-[1.5px] border-transparent bg-transparent px-5 py-3 font-mono text-[11px] uppercase tracking-[0.22em] text-zinc-600 shadow-none transition-colors hover:text-zinc-300 data-[state=active]:border-white data-[state=active]:text-white data-[state=active]:shadow-none"
+              >
+                Branding
+              </TabsTrigger>
+            </TabsList>
 
-          <TabsContent value="web">
-            <ProjectGrid projects={webProjects} />
-          </TabsContent>
-          <TabsContent value="branding">
-            <div className="grid grid-cols-2 gap-px bg-white/8 md:grid-cols-3">
-              {brandingProjects.map((project) => (
-                <button
-                  key={project.name}
-                  onClick={() => setSelected(project)}
-                  className="group flex items-center justify-between bg-black px-6 py-7 text-left transition-colors hover:bg-white/4"
-                >
-                  <p className="text-[13px] text-zinc-500 transition-colors group-hover:text-zinc-200">
-                    {project.name}
-                  </p>
-                </button>
-              ))}
-            </div>
-          </TabsContent>
-        </Tabs>
+            <TabsContent value="web">
+              <ProjectGrid projects={webProjects} />
+            </TabsContent>
+            <TabsContent value="branding">
+              <div className="grid grid-cols-2 gap-px bg-white/8 md:grid-cols-3">
+                {brandingProjects.map((project) => (
+                  <button
+                    key={project.name}
+                    onClick={() => setSelected(project)}
+                    className="group flex items-center justify-between bg-black px-6 py-7 text-left transition-colors hover:bg-white/4"
+                  >
+                    <p className="text-[13px] text-zinc-500 transition-colors group-hover:text-zinc-200">
+                      {project.name}
+                    </p>
+                  </button>
+                ))}
+              </div>
+            </TabsContent>
+          </Tabs>
         </motion.div>
       </div>
 

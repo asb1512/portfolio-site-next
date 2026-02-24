@@ -1,12 +1,21 @@
-import { Github, Linkedin, Mail } from "lucide-react"
+import { Github, Linkedin, Mail } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Nav() {
   return (
     <nav className="sticky top-0 z-50 border-b border-white/10 bg-black/90 backdrop-blur-sm">
       <div className="mx-auto flex h-12 max-w-5xl items-center justify-between px-6">
-        <span className="font-mono text-xs tracking-[0.35em] text-white uppercase select-none">
-          AB
-        </span>
+        <div className="flex flex-row justify-center items-center gap-4">
+          <Image
+            src="/images/ab_logo.svg"
+            alt="Andrew Bourgeois"
+            width={32}
+            height={32}
+          />
+          <span className="font-mono text-xs tracking-[0.35em] text-white uppercase select-none">
+            AB
+          </span>
+        </div>
         <div className="flex items-center gap-5">
           <a
             href="https://github.com/asb1512"
@@ -36,5 +45,5 @@ export default function Nav() {
         </div>
       </div>
     </nav>
-  )
+  );
 }
